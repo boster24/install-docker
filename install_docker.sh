@@ -70,6 +70,12 @@ echo ""
 echo "[3/3] ✓ Docker services berhasil diaktifkan"
 echo ""
 
+# --- BAGIAN TAMBAHAN: AUTO-RESTART MIKROTIK CHR ---
+echo "[AUTO-START] Mengaktifkan auto-restart untuk container CHR (jika ada)..."
+docker update --restart unless-stopped mikrotik-chr 2>/dev/null || true
+echo "✓ Auto-restart CHR sudah diaktifkan"
+echo ""
+
 # Bonus: Add user to docker group
 echo "[BONUS] Menambahkan user ke docker group..."
 echo ""
